@@ -12,4 +12,3 @@ jobs:
           docker build .
           --build-arg ALPINE_VERSION=$ALPINE_VERSION
           --build-arg COMPOSER_VERSION=$COMPOSER_VERSION
-          -t $IMAGE_NAME:$IMAGE_VERSION
