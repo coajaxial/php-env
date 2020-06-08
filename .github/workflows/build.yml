@@ -14,7 +14,7 @@ jobs:
           --build-arg ALPINE_VERSION=${{ steps.dotenv.outputs.ALPINE_VERSION }}
           --build-arg COMPOSER_VERSION=${{ steps.dotenv.outputs.COMPOSER_VERSION }}
           -t ${{ steps.dotenv.outputs.IMAGE_NAME }}:latest
-      - run: docker login docker.pkg.github.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      - run: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
