@@ -7,5 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: falti/dotenv-action@v0.2.4
-      - run: echo $IMAGE_NAME
+      - id: dotenv
+        uses: falti/dotenv-action@v0.2.4
+      - run: >
+          docker build .
+          --build-arg ALPINE_VERSION=${{ steps.dotenv.outputs.ALPINE_VERSION }}
+          --build-arg COMPOSER_VERSION=${{ steps.dotenv.outputs.COMPOSER_VERSION }}
+          -t ${{ steps.dotenv.outputs.IMAGE_NAME }}:${{ steps.dotenv.outputs.IMAGE_VERSION }}
