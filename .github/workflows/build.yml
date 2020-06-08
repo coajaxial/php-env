@@ -17,3 +17,4 @@ jobs:
           buildoptions: >
             --build-arg ALPINE_VERSION=${{ steps.dotenv.outputs.ALPINE_VERSION }}
             --build-arg COMPOSER_VERSION=${{ steps.dotenv.outputs.COMPOSER_VERSION }}
+          tag_semver: true
