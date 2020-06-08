@@ -51,7 +51,7 @@ RUN apk add --update --no-cache \
     && ln -s /usr/bin/php7 /usr/local/bin/php \
     && chmod 0755 /usr/local/bin/composer \
     && echo "zend_extension=xdebug.so" > /etc/php7/conf.d/xdebug.ini \
-    && yarn i docsify-cli -g \
+    && yarn global add docsify-cli \
     && :
 
 WORKDIR /opt/project
