@@ -6,6 +6,14 @@
 docker run --rm -i -v $(pwd):/opt/project coajaxial/php-env [command]
 ```
 
+### Create cron that updates image daily (optional)
+
+Add the following line to your crontab file (`crontab -e`):
+
+```
+0 0 */1 * * docker pull coajaxial/php-env
+```
+
 ## Features
 
 - Alpine Linux
